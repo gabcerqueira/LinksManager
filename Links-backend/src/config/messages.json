@@ -1,0 +1,15 @@
+{
+    "response.jsonOk": "Requisição efetuada com sucesso",
+    "response.jsonBadRequest": "Requisição Inválida",
+    "response.jsonUnauthorized": "Não Autorizado",
+    "response.jsonNotFound": "Não Achou",
+    "response.jsonServerError": "Erro no Servidor",
+    "accountSignUp.password_confirmation.any.required": "Confirmação de Senha obrigatório",
+    "accountSignUp.password_confirmation.string.empty": "Confirmação de Senha não pode ser vazia",
+    "accountSignUp.password.string.empty": "Campo de senha não pode ser vazio",
+    "accountSignUp.email.string.empty": "Campo de email não pode ser vazio",
+    "accountSignUp.email.string.email": "Campo de email inválido",
+    "accountSignUp.email.string.exists": "Campo de email ja existe",
+    "accountSignUp.success": "Sua conta foi criada com sucesso",
+    "accountSignUp.password.string.pattern.base": "Campo de senha deve conter no mínimo 6 caracteres"
+}
