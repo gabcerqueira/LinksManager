@@ -1,27 +1,24 @@
 module.exports = (sequelize, DataTypes) => {
+	const Account = sequelize.define("Account", {
+		email: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
+		password: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
+	});
 
-    const Account = sequelize.define('Account', {
+	Account.prototype.toJSON = function () {
+		const values = {
+			...this.get(),
+		};
 
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-    });
+		delete values.password;
 
-    Account.prototype.toJSON = function () {
+		return values;
+	};
 
-        const values = {
-            ...this.get()
-        }
-
-        delete values.password;
-
-        return values;
-    }
-
-    return Account;
+	return Account;
 };
