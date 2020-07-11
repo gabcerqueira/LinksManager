@@ -4,6 +4,15 @@
     "response.jsonUnauthorized": "Não Autorizado",
     "response.jsonNotFound": "Não Achou",
     "response.jsonServerError": "Erro no Servidor",
+
+    "accountSignIn.email.invalid": "Credenciais invalidas",
+    "accountSignIn.sucess": "Usuário Logado com sucesso",
+    "accountSignIn.password.string.empty": "Campo de senha não pode ser vazio",
+    "accountSignIn.email.string.empty": "Campo de email não pode ser vazio",
+    "accountSignIn.email.string.email": "Campo de email inválido",
+    "accountSignIn.email.string.exists": "Campo de email ja existe",
+    "accountSignIn.password.string.pattern.base": "Campo de senha deve conter no mínimo 6 caracteres",
+
     "accountSignUp.password_confirmation.any.required": "Confirmação de Senha obrigatório",
     "accountSignUp.password_confirmation.string.empty": "Confirmação de Senha não pode ser vazia",
     "accountSignUp.password.string.empty": "Campo de senha não pode ser vazio",
