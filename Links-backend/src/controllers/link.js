@@ -23,7 +23,7 @@ router.get("/:id", async (req, res) => {
 		where: { id: id, accountId: accountId },
 	});
 
-	if (!getLink) return res.jsonNotFound();
+	if (!getLink) return res.jsonNotFound(null, "Não achou");
 
 	return res.jsonOK(getLink);
 });

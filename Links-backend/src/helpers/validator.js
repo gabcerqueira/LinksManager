@@ -24,5 +24,4 @@ const getValidatorError = (error, messagePath) => {
 
 module.exports = {
 	getValidatorError,
-	getMessage,
 };
