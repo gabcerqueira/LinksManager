@@ -3,9 +3,11 @@ const db = require("./models/index");
 const authController = require("./controllers/auth");
 const linkController = require("./controllers/link");
 const response = require("./middlewares/response");
+const checkJwt = require("./middlewares/jwt");
 
 const app = express();
 app.use(response);
+app.use(checkJwt);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
