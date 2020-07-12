@@ -13,7 +13,7 @@ router.post("/sign-in", accountSignIn, async (req, res) => {
 
 	const account = await Account.findOne({ where: { email } });
 
-	//password validation -->
+	//              <-- account validation -->
 
 	const match = account ? bcrypt.compareSync(password, account.password) : null;
 
