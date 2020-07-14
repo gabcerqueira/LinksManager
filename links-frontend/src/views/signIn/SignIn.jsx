@@ -1,19 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { signIn } from "./SignInActions";
 
-function SignIn() {
+function SignIn(props) {
+	const { account, signIn } = props;
+
+	const [email, setEmail] = useState();
+	const [password, setPassword] = useState();
+
+	const submitHandler = (e) => {
+		e.preventDefault();
+		signIn({ email: email, password: password });
+	};
+
+	console.log("*** SignIn.account", account);
+
 	return (
 		<div className="container h-100 pt-5">
 			<h1 className="mx-auto">Sign In</h1>
 			<div className="d-flex flex-column h-100">
-				<form>
+				<form onSubmit={submitHandler}>
 					<div className="form-group">
 						<label>Email</label>
-						<input type="text" className="form-control" />
+						<input
+							onChange={(e) => setEmail(e.target.value)}
+							type="text"
+							className="form-control"
+						/>
 					</div>
 					<div className="form-group">
 						<label>Password</label>
-						<input type="password" className="form-control" />
+						<input
+							onChange={(e) => setPassword(e.target.value)}
+							type="password"
+							className="form-control"
+						/>
 					</div>
 					<div>
 						<button className="btn btn-primary btn-round">Submit</button>
@@ -28,4 +50,8 @@ function SignIn() {
 	);
 }
 
-export default SignIn;
+const mapStateToProps = (state) => {
+	return { account: state.signIn.account };
+};
+
+export default connect(mapStateToProps, { signIn })(SignIn);
