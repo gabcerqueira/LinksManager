@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { signIn } from "./SignInActions";
 
 function SignIn(props) {
-	const { account, signIn } = props;
+	const { signIn } = props;
 
 	const [email, setEmail] = useState();
 	const [password, setPassword] = useState();
@@ -13,8 +13,6 @@ function SignIn(props) {
 		e.preventDefault();
 		signIn({ email: email, password: password });
 	};
-
-	console.log("*** SignIn.account", account);
 
 	return (
 		<div className="container h-100 pt-5">

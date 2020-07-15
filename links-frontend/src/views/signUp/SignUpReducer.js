@@ -1,14 +1,14 @@
-import { SIGN_IN } from "./SignInActions";
+import { SIGN_UP } from "./SignUpActions";
 
 const initialState = {
 	account: null,
 };
 
-function signInReducer(state = initialState, action) {
+function signUpReducer(state = initialState, action) {
 	const { type, payload } = action;
 
 	switch (type) {
-		case SIGN_IN:
+		case SIGN_UP:
 			return { ...initialState, account: { ...payload, success: true } };
 
 		default:
@@ -16,4 +16,4 @@ function signInReducer(state = initialState, action) {
 	}
 }
 
-export default signInReducer;
+export default signUpReducer;
