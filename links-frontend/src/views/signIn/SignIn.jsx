@@ -1,18 +1,23 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { signIn } from "./SignInActions";
 
 function SignIn(props) {
-	const { signIn } = props;
+	const { signIn, account } = props;
 
 	const [email, setEmail] = useState();
 	const [password, setPassword] = useState();
 
 	const submitHandler = (e) => {
 		e.preventDefault();
-		signIn({ email: email, password: password });
+		const data = { email: email, password: password };
+		signIn(data);
 	};
+
+	if (account) {
+		return <Redirect to="/manage/links" />;
+	}
 
 	return (
 		<div className="container h-100 pt-5">

@@ -12,9 +12,11 @@ function SignUp(props) {
 
 	const submitHandler = (e) => {
 		e.preventDefault();
-		const formData = new FormData(e.target);
-		const data = Object.fromEntries(formData);
-
+		const data = {
+			email: email,
+			password: password,
+			confirmPassword: confirmPassword,
+		};
 		signUp(data);
 	};
 
@@ -32,7 +34,6 @@ function SignUp(props) {
 						<input
 							onChange={(e) => setEmail(e.target.value)}
 							type="text"
-							name="email"
 							className="form-control"
 						/>
 					</div>
@@ -41,7 +42,6 @@ function SignUp(props) {
 						<input
 							onChange={(e) => setPassword(e.target.value)}
 							type="password"
-							name="password"
 							className="form-control"
 						/>
 					</div>
@@ -50,7 +50,6 @@ function SignUp(props) {
 						<input
 							onChange={(e) => setconfirmPassword(e.target.value)}
 							type="password"
-							name="password_confirmation"
 							className="form-control"
 						/>
 					</div>
