@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { signUp } from "./SignUpActions";
 
 function SignUp(props) {
-	const { signUp } = props;
+	const { signUp, account } = props;
 
 	const [email, setEmail] = useState();
 	const [password, setPassword] = useState();
@@ -17,6 +17,10 @@ function SignUp(props) {
 
 		signUp(data);
 	};
+
+	if (account) {
+		return <Redirect to="/manage/links" />;
+	}
 
 	return (
 		<div className="container h-100 pt-5">

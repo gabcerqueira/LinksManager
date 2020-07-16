@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
 	return (
@@ -6,7 +7,9 @@ function Navbar() {
 			<div className="container d-flex w-100 justify content-around">
 				<div>
 					<span>
-						<i class="fas fa-arrow-left fa-2x">BACK</i>
+						<i class="fas fa-arrow-left fa-2x">
+							<Link to="/">BACK</Link>
+						</i>
 					</span>
 				</div>
 
