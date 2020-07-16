@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { signUp } from "./SignUpActions";
+import { signUp } from "../../actions/accountActions";
 
 function SignUp(props) {
 	const { signUp, account } = props;
 
 	const [email, setEmail] = useState();
 	const [password, setPassword] = useState();
-	const [confirmPassword, setconfirmPassword] = useState();
+	const [passwordConfirmation, setPasswordConfirmation] = useState();
 
 	const submitHandler = (e) => {
 		e.preventDefault();
 		const data = {
 			email: email,
 			password: password,
-			confirmPassword: confirmPassword,
+			password_confirmation: passwordConfirmation,
 		};
 		signUp(data);
 	};
@@ -48,7 +48,7 @@ function SignUp(props) {
 					<div className="form-group">
 						<label>Confirm Password</label>
 						<input
-							onChange={(e) => setconfirmPassword(e.target.value)}
+							onChange={(e) => setPasswordConfirmation(e.target.value)}
 							type="password"
 							className="form-control"
 						/>
@@ -67,7 +67,7 @@ function SignUp(props) {
 }
 
 const mapStateToProps = (state) => {
-	return { account: state.signUp.account };
+	return { account: state.account.account };
 };
 
 export default connect(mapStateToProps, { signUp })(SignUp);
