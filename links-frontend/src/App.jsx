@@ -13,6 +13,9 @@ function App() {
 	return (
 		<div className="App">
 			<Router>
+				<Link to="/manage/links/create">Link to create</Link>
+				<Link to="/manage/links/edit">Link to edit</Link>
+				<Link to="/manage/links">Link to manage links</Link>
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/sign-in" component={SignIn} />

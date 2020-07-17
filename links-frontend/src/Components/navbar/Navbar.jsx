@@ -33,8 +33,7 @@ function Navbar(props) {
 
 				<div>
 					<span>
-						<button className="btn btn-clear " onClick={signOutHandler}>
-							{" "}
+						<button className="btn btn-clear" onClick={signOutHandler}>
 							<i className="fas fa-sign-out-alt fa-2x text-white">EXIT</i>
 						</button>
 					</span>

@@ -19,7 +19,6 @@ function accountReducer(state = initialState, action) {
 		case SIGN_IN:
 		case SIGN_UP:
 			const response = payload ? payload.data : null;
-
 			const account = response ? response.data : null;
 			const metadata = response ? response.metadata : null;
 
