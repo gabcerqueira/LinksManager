@@ -30,7 +30,7 @@ function LinkCard(props) {
 
 			<div className="ml-auto p-2 clearfix">
 				<div className="col text-right align-self-bottom ">
-					<Link to="/manage/links/edit" className="btn btn-primary">
+					<Link to={`/manage/links/edit/${linkId}`} className="btn btn-primary">
 						edit
 					</Link>
 				</div>

@@ -1,4 +1,9 @@
-import { LINK_CREATE, LINK_LIST } from "../actions/linkActions";
+import {
+	LINK_CREATE,
+	LINK_LIST,
+	LINK_GET_ONE,
+	LINK_EDIT,
+} from "../actions/linkActions";
 
 const initialState = {
 	link: null,
@@ -20,6 +25,21 @@ function linkReducer(state = initialState, action) {
 			const message = response ? response.message : null;
 
 			return { ...state, links: links, message: message };
+		}
+		case LINK_GET_ONE: {
+			const response = payload ? payload.data : null;
+			const link = response ? response.data : null;
+			const message = response ? response.message : null;
+
+			return { ...state, link: link, message: message };
+		}
+
+		case LINK_EDIT: {
+			const response = payload ? payload.data : null;
+			const link = response ? response.data : null;
+			const message = response ? response.message : null;
+
+			return { ...state, link: link, message: message };
 		}
 
 		default:

@@ -31,7 +31,7 @@ function App(props) {
 					<Route exact path="/sign-up" component={SignUp} />
 					<Route exact path="/manage/links" component={ManageLinks} />
 					<Route exact path="/manage/links/create" component={CreateLink} />
-					<Route exact path="/manage/links/edit" component={EditLink} />
+					<Route exact path="/manage/links/edit/:id" component={EditLink} />
 				</Switch>
 			</Router>
 		</div>

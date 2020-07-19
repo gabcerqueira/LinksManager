@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 	return res.jsonOK(getLinks);
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/edit/:id", async (req, res) => {
 	const { accountId } = req;
 	const { id } = req.params;
 
@@ -39,7 +39,7 @@ router.post("/", async (req, res) => {
 	return res.jsonOK(NewLink);
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/edit/:id", async (req, res) => {
 	const { accountId, body } = req; //req.id
 	const { id } = req.params;
 
