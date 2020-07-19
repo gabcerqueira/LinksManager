@@ -4,6 +4,7 @@ import {
 	LINK_GET_ONE,
 	LINK_EDIT,
 	LINK_TO_REMOVE,
+	LINK_REMOVE,
 } from "../actions/linkActions";
 
 const initialState = {
@@ -45,6 +46,12 @@ function linkReducer(state = initialState, action) {
 
 		case LINK_TO_REMOVE: {
 			return { ...state, linkToRemove: payload };
+		}
+		case LINK_REMOVE: {
+			const links = state.links.filter(
+				(link) => link.id !== state.linkToRemove.id
+			);
+			return { ...state, linkToRemove: null, links: links };
 		}
 
 		default:

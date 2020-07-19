@@ -1,10 +1,11 @@
-import { apiPost, apiGet, apiPut } from "../helpers/apiHelper";
+import { apiPost, apiGet, apiPut, apiDelete } from "../helpers/apiHelper";
 
 export const LINK_CREATE = "LINK_CREATE";
 export const LINK_LIST = "LINK_LIST";
 export const LINK_GET_ONE = "LINK_GET_ONE";
 export const LINK_EDIT = "LINK_EDIT";
 export const LINK_TO_REMOVE = "LINK_TO_REMOVE";
+export const LINK_REMOVE = "LINK_REMOVE";
 
 export const linkCreate = (data) => {
 	const isSocial = !!data.isSocial;
@@ -29,6 +30,11 @@ export const linkEdit = (id, data) => {
 	const isSocial = !!data.isSocial;
 	const payload = apiPut(`/link/edit/${id}`, { ...data, isSocial });
 	return { type: LINK_EDIT, payload: payload };
+};
+
+export const linkRemove = (link) => {
+	const payload = apiDelete(`/link/${link.id}`);
+	return { type: LINK_REMOVE, payload: payload };
 };
 
 export const setLinkToRemove = (link) => {
