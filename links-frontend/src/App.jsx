@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 // <-- Views -->
 import Home from "./views/home/Home";
@@ -9,7 +10,15 @@ import ManageLinks from "./views/manage/links/Links";
 import CreateLink from "./views/manage/createLink/CreateLink";
 import EditLink from "./views/manage/editLink/EditLink";
 
-function App() {
+// <-- functions -->
+import { initAccount } from "./actions/accountActions";
+
+function App(props) {
+	const { initAccount } = props;
+	useEffect(() => {
+		initAccount();
+	}, [initAccount]);
+
 	return (
 		<div className="App">
 			<Router>
@@ -28,5 +37,8 @@ function App() {
 		</div>
 	);
 }
+const mapStateToProps = (state) => {
+	return { account: state.account.account };
+};
 
-export default App;
+export default connect(mapStateToProps, { initAccount })(App);

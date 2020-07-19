@@ -3,6 +3,7 @@ import { apiPost } from "../helpers/apiHelper";
 export const SIGN_IN = "SIGN_IN";
 export const SIGN_UP = "SIGN_UP";
 export const SIGN_OUT = "SIGN_OUT";
+export const INIT_ACCOUNT = "INIT_ACCOUNT";
 
 // <--SIGN IN -->
 export const signIn = (data) => {
@@ -19,4 +20,8 @@ export const signUp = (data) => {
 // <--SIGN OUT -->
 export const signOut = () => {
 	return { type: SIGN_OUT, payload: {} };
+};
+
+export const initAccount = () => {
+	return { type: INIT_ACCOUNT, payload: {} };
 };

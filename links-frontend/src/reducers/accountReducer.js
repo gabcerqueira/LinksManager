@@ -1,4 +1,9 @@
-import { SIGN_IN, SIGN_UP, SIGN_OUT } from "../actions/accountActions";
+import {
+	SIGN_IN,
+	SIGN_UP,
+	SIGN_OUT,
+	INIT_ACCOUNT,
+} from "../actions/accountActions";
 import {
 	setAccount,
 	removeAccount,
@@ -6,6 +11,7 @@ import {
 	removeRefreshToken,
 	setToken,
 	setRefreshToken,
+	getAccount,
 } from "../helpers/accountHelper";
 
 const initialState = {
@@ -29,13 +35,19 @@ function accountReducer(state = initialState, action) {
 			if (token) setToken(token);
 			if (refreshToken) setRefreshToken(refreshToken);
 
-			return { ...initialState, account: account };
+			return { ...state, account: account };
 
 		case SIGN_OUT: {
 			removeAccount();
 			removeToken();
 			removeRefreshToken();
 			return { ...state, account: null };
+		}
+
+		case INIT_ACCOUNT: {
+			const account = getAccount();
+
+			return { ...state, account: account };
 		}
 
 		default:

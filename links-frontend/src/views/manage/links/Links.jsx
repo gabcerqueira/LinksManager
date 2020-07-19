@@ -13,6 +13,7 @@ function Links(props) {
 	}, [linkList]);
 
 	const renderLinks = (links) => {
+		if (!links) return null;
 		return links.map((link) => {
 			return (
 				<LinkCard
