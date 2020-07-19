@@ -29,15 +29,12 @@ function EditLink(props) {
 
 		const data = { label: label, url: url, isSocial: isSocial };
 		linkEdit(id, data).then(setIsEdited(true));
-		if (isEdited) {
-			setIsEdited(false);
-			return <Redirect to="/manage/links" />;
-		}
 	};
 
 	return (
 		<>
 			<Navbar />
+			{isEdited ? <Redirect to="/manage/links" /> : null}
 			<div className="container h-100 pt-5">
 				<h1 className="mx-auto">Edit Link</h1>
 				<div className="d-flex flex-column h-100">

@@ -6,15 +6,21 @@ import { linkList } from "../../../actions/linkActions";
 import LinkCard from "../../../Components/link-card/LinkCard";
 
 function Links(props) {
-	const { links, linkList } = props;
+	const { links, linkList, linkToRemove } = props;
 
 	useEffect(() => {
 		linkList();
 	}, [linkList]);
 
+	const remove = (linkToRemove) => {};
+
 	const renderLinks = (links) => {
 		if (!links) return null;
 		return links.map((link) => {
+			const border =
+				linkToRemove && linkToRemove.id === link.id
+					? "border border-danger rounded"
+					: "border border-transparent";
 			return (
 				<LinkCard
 					key={link.id}
@@ -22,6 +28,8 @@ function Links(props) {
 					img={link.img}
 					label={link.label}
 					url={link.url}
+					link={link}
+					border={border}
 				/>
 			);
 		});
@@ -49,7 +57,7 @@ function Links(props) {
 }
 
 const mapStateToprops = (state) => {
-	return { links: state.link.links };
+	return { links: state.link.links, linkToRemove: state.link.linkToRemove };
 };
 
 export default connect(mapStateToprops, { linkList })(Links);

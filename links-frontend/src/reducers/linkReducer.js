@@ -3,6 +3,7 @@ import {
 	LINK_LIST,
 	LINK_GET_ONE,
 	LINK_EDIT,
+	LINK_TO_REMOVE,
 } from "../actions/linkActions";
 
 const initialState = {
@@ -40,6 +41,10 @@ function linkReducer(state = initialState, action) {
 			const message = response ? response.message : null;
 
 			return { ...state, link: link, message: message };
+		}
+
+		case LINK_TO_REMOVE: {
+			return { ...state, linkToRemove: payload };
 		}
 
 		default:
