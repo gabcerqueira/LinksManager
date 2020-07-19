@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Navbar from "../../../Components/navbar/Navbar";
 import { connect } from "react-redux";
 import { linkCreate } from "../../../actions/linkActions";

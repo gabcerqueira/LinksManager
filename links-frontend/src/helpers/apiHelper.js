@@ -18,6 +18,13 @@ export const apiPost = (path, data = {}) => {
 	const options = {
 		headers: getHeaders(),
 	};
-
 	return axios.post(url, data, options);
+};
+
+export const apiGet = (path) => {
+	const url = getApiUrl(path);
+	const options = {
+		headers: getHeaders(),
+	};
+	return axios.get(url, options);
 };

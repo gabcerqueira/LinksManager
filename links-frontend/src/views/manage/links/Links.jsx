@@ -1,7 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../../../Components/navbar/Navbar";
-function Links() {
+import { connect } from "react-redux";
+import { linkList } from "../../../actions/linkActions";
+import LinkCard from "../../../Components/link-card/LinkCard";
+
+function Links(props) {
+	const { links, linkList } = props;
+
+	useEffect(() => {
+		linkList();
+	}, [linkList]);
+
+	const renderLinks = (links) => {
+		return links.map((link) => {
+			return (
+				<LinkCard
+					key={link.id}
+					id={link.id}
+					img={link.img}
+					label={link.label}
+					url={link.url}
+				/>
+			);
+		});
+	};
+
 	return (
 		<>
 			<Navbar />
@@ -17,33 +41,14 @@ function Links() {
 						</Link>
 					</div>
 				</div>
-
-				<div className=" py-2 px-3 d-flex flex-row justify-content-between">
-					<div className="pr-3 ">
-						<img src="https://via.placeholder.com/100" alt="Link Icon"></img>
-					</div>
-
-					<div className="align-self-center">
-						<span className="text-primary clearfix">Item Label</span>
-						<span className="text-primary clearfix">Item Url</span>
-					</div>
-
-					<div className="ml-auto p-2 clearfix">
-						<div className="col text-right align-self-bottom ">
-							<Link to="/manage/links/edit" className="btn btn-primary">
-								edit
-							</Link>
-						</div>
-						<div className="col text-right align-self-bottom ">
-							<Link to="/manage/links/create" className="btn btn-primary">
-								delete
-							</Link>
-						</div>
-					</div>
-				</div>
+				<div className="container">{renderLinks(links)}</div>
 			</div>
 		</>
 	);
 }
 
-export default Links;
+const mapStateToprops = (state) => {
+	return { links: state.link.links };
+};
+
+export default connect(mapStateToprops, { linkList })(Links);
