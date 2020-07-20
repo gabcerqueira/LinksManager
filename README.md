@@ -11,8 +11,11 @@ This app was made in order to learn a solid api rest backend with nodeJS , and a
  <li>[📲] Responsive layout
  <li>[:clock2:] Generating Tokens and Refresh Tokens
  </ul>
- Examples of usage : React Hooks ,Redux,Middlewares ,Express ,Sequelize,
+ Examples of usage : React Hooks ,Redux,Middlewares ,Express
+ 
+ 
+ 
 
-<div style="align-center">Made with :coffee: and :heart: by Gabriel Cerqueira<div/>
+<div>Made with :coffee: and :heart: by Gabriel Cerqueira<div/>
 
 
