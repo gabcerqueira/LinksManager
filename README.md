@@ -13,6 +13,6 @@ This app was made in order to learn a solid api rest backend with nodeJS , and a
  </ul>
  Examples of usage : React Hooks ,Redux,Middlewares ,Express ,Sequelize,
 
-<div class="align-center">made with :coffee: and :heart: by Gabriel Cerqueira<div/>
+<div style="align-center">Made with :coffee: and :heart: by Gabriel Cerqueira<div/>
 
 
