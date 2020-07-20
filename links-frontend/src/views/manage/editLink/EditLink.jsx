@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useParams, Redirect } from "react-router-dom";
 import Navbar from "../../../Components/navbar/Navbar";
 import { connect } from "react-redux";
-
 import { linkGet } from "../../../actions/linkActions";
 import { linkEdit } from "../../../actions/linkActions";
 
 function EditLink(props) {
-	const { linkGet, link, linkEdit } = props;
+	const { linkGet, linkEdit } = props;
 	const { id } = useParams();
 
 	const [label, setLabel] = useState();
@@ -22,6 +21,7 @@ function EditLink(props) {
 			setUrl(resultPath.url);
 			setIsSocial(resultPath.isSocial);
 		});
+		return () => {};
 	}, [isEdited]);
 
 	const submitHandler = (e) => {

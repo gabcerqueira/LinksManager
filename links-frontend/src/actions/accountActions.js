@@ -1,9 +1,10 @@
-import { apiPost } from "../helpers/apiHelper";
+import { apiPost, apiRefreshToken } from "../helpers/apiHelper";
 
 export const SIGN_IN = "SIGN_IN";
 export const SIGN_UP = "SIGN_UP";
 export const SIGN_OUT = "SIGN_OUT";
 export const INIT_ACCOUNT = "INIT_ACCOUNT";
+export const REFRESH_TOKEN = "REFRESH_TOKEN";
 
 // <--SIGN IN -->
 export const signIn = (data) => {
@@ -24,4 +25,9 @@ export const signOut = () => {
 
 export const initAccount = () => {
 	return { type: INIT_ACCOUNT, payload: {} };
+};
+
+export const getFreshToken = () => {
+	const payload = apiRefreshToken();
+	return { type: REFRESH_TOKEN, payload: payload };
 };

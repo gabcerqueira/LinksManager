@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Link, Redirect } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../../../Components/navbar/Navbar";
 import { connect } from "react-redux";
 import { linkList } from "../../../actions/linkActions";

@@ -6,14 +6,14 @@ import { setLinkToRemove } from "../../actions/linkActions";
 function LinkCard(props) {
 	const { setLinkToRemove, border } = props;
 	const [linkId, setlinkId] = useState();
-	const [linkImg, setLinkImg] = useState();
+	//const [linkImg, setLinkImg] = useState();
 	const [linkLabel, setLinkLabel] = useState();
 	const [linkUrl, setLinkUrl] = useState();
 	const [link, setLink] = useState(null);
 
 	const setAttributes = () => {
 		setlinkId(props.id);
-		setLinkImg(props.img);
+		//	setLinkImg(props.img);
 		setLinkLabel(props.label);
 		setLinkUrl(props.url);
 		setLink(props.link);
