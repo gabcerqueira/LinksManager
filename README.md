@@ -13,6 +13,6 @@ This app was made in order to learn a solid api rest backend with nodeJS , and a
  Examples of usage : React Hooks ,Redux,Middlewares ,Express ,Sequelize,
  
 
-
+made with :coffee: and :love: by Gabriel Cerqueira
 
 
