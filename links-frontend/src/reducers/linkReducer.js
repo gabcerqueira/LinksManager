@@ -44,8 +44,6 @@ function linkReducer(state = initialState, action) {
 				link.id === linker.id ? (link = linker) : (link = link)
 			);
 
-			console.log("link.reducer.links : ", links);
-
 			return { ...state, link: linker, links: links, message: message };
 		}
 

@@ -23,7 +23,7 @@ function LinkCard(props) {
 		setLinkToRemove(link);
 	};
 
-	useEffect(() => setAttributes(), []);
+	useEffect(() => setAttributes());
 
 	return (
 		<div
