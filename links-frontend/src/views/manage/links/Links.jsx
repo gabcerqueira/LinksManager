@@ -23,6 +23,7 @@ function Links(props) {
 
 	const renderLinks = (links) => {
 		if (!links) return null;
+		console.log("links.render", links);
 		return links.map((link) => {
 			const border =
 				linkToRemove && linkToRemove.id === link.id
@@ -41,6 +42,7 @@ function Links(props) {
 			);
 		});
 	};
+	console.log("Links.lista chegou atualizada ?", links);
 
 	return (
 		<>

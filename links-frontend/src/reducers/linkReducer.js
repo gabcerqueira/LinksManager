@@ -38,10 +38,15 @@ function linkReducer(state = initialState, action) {
 
 		case LINK_EDIT: {
 			const response = payload ? payload.data : null;
-			const link = response ? response.data : null;
+			const linker = response ? response.data : null;
 			const message = response ? response.message : null;
+			const links = state.links.map((link) =>
+				link.id === linker.id ? (link = linker) : (link = link)
+			);
 
-			return { ...state, link: link, message: message };
+			console.log("link.reducer.links : ", links);
+
+			return { ...state, link: linker, links: links, message: message };
 		}
 
 		case LINK_TO_REMOVE: {
