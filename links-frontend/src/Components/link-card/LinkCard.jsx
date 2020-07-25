@@ -11,19 +11,17 @@ function LinkCard(props) {
 	const [linkUrl, setLinkUrl] = useState();
 	const [link, setLink] = useState(null);
 
-	const setAttributes = () => {
-		setlinkId(props.id);
-		//	setLinkImg(props.img);
-		setLinkLabel(props.label);
-		setLinkUrl(props.url);
-		setLink(props.link);
-	};
-
 	const deleteLink = (e) => {
 		setLinkToRemove(link);
 	};
 
-	useEffect(() => setAttributes());
+	useEffect(() => {
+		if (props.id !== linkId) setlinkId(props.id);
+		//	setLinkImg(props.img);
+		if (props.label !== linkLabel) setLinkLabel(props.label);
+		if (props.url !== linkUrl) setLinkUrl(props.url);
+		if (props.link !== link) setLink(props.link);
+	});
 
 	return (
 		<div

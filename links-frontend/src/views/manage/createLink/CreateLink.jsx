@@ -11,15 +11,17 @@ function CreateLink(props) {
 	const [url, setUrl] = useState();
 	const [isSocial, setIsSocial] = useState();
 	//const [loading, setLoading] = useState(false);
+	const [created, setCreated] = useState(false);
 
 	const submitHandler = (e) => {
 		e.preventDefault();
 		//	setLoading(true);
 		const data = { label: label, url: url, isSocial: isSocial };
-		linkCreate(data);
+
+		linkCreate(data).then(setCreated(true));
 	};
 
-	if (link) {
+	if (link && created) {
 		return <Redirect to="/manage/links" />;
 	}
 

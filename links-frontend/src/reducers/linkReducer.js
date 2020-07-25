@@ -19,6 +19,7 @@ function linkReducer(state = initialState, action) {
 			const response = payload ? payload.data : null;
 			const link = response ? response.data : null;
 			const message = response ? response.message : null;
+
 			return { ...state, link: link, message: message };
 		}
 		case LINK_LIST: {

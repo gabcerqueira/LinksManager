@@ -15,7 +15,7 @@ function Navbar(props) {
 		signOut();
 	};
 	return (
-		<nav className="navbar navbar-expand-lg bg-blue text-light">
+		<nav className="navbar navbar-expand-lg  text-light">
 			<div className="container d-flex w-100 justify content-around">
 				<div>
 					<span>

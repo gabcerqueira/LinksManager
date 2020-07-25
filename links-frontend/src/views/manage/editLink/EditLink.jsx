@@ -36,28 +36,28 @@ function EditLink(props) {
 			<Navbar />
 			{isEdited ? <Redirect to="/manage/links" /> : null}
 			<div className="container h-100 pt-5">
-				<h1 className="mx-auto">Edit Link</h1>
+				<h1 className="mx-auto text-white">Edit Link</h1>
 				<div className="d-flex flex-column h-100">
 					<form onSubmit={submitHandler}>
-						<div className="form-group">
+						<div className="form-group text-white">
 							<label>Label</label>
 							<input
 								onChange={(e) => setLabel(e.target.value)}
 								type="text"
-								className="form-control"
+								className="form-control bg-white"
 								value={label}
 							/>
 						</div>
-						<div className="form-group">
+						<div className="form-group ">
 							<label>Url</label>
 							<input
 								onChange={(e) => setUrl(e.target.value)}
 								type="text"
-								className="form-control"
+								className="form-control bg-white"
 								value={url}
 							/>
 						</div>
-						<div className="form-group form-check">
+						<div className="form-group form-check ">
 							<label className="form-check-label">
 								is Social
 								<input
@@ -66,11 +66,11 @@ function EditLink(props) {
 									name="isSocial"
 									checked={!!isSocial}
 								/>
-								<span className="form-check-sign"></span>
+								<span className="form-check-sign bg-white"></span>
 							</label>
 						</div>
 						<div>
-							<button className="btn btn-primary btn-round">Submit</button>
+							<button className="btn btn-secondary btn-round">Submit</button>
 						</div>
 					</form>
 				</div>
