@@ -20,7 +20,7 @@ function App(props) {
 	}, [initAccount]);
 
 	return (
-		<div className="App">
+		<>
 			<Router>
 				<Switch>
 					<Route exact path="/" component={Home} />
@@ -31,7 +31,7 @@ function App(props) {
 					<Route exact path="/manage/links/edit/:id" component={EditLink} />
 				</Switch>
 			</Router>
-		</div>
+		</>
 	);
 }
 const mapStateToProps = (state) => {

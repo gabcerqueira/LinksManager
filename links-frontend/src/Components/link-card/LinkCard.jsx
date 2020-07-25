@@ -27,9 +27,9 @@ function LinkCard(props) {
 
 	return (
 		<div
-			className={`${border} py-2 px-3 d-flex flex-row justify-content-between`}
+			className={`${border} py-2 px-3 d-flex flex-row card-list justify-content-between`}
 		>
-			<div className="pr-3 ">
+			<div className="pr-3  py-2 px-2">
 				<img src="https://via.placeholder.com/100" alt="Link Icon"></img>
 			</div>
 
@@ -41,12 +41,15 @@ function LinkCard(props) {
 
 			<div className="ml-auto p-2 clearfix">
 				<div className="col text-right align-self-bottom ">
-					<Link to={`/manage/links/edit/${linkId}`} className="btn btn-primary">
+					<Link
+						to={`/manage/links/edit/${linkId}`}
+						className="btn btn-secondary"
+					>
 						edit
 					</Link>
 				</div>
 				<div className="col text-right align-self-bottom ">
-					<button onClick={deleteLink} className="btn btn-primary">
+					<button onClick={deleteLink} className="btn btn-secondary">
 						Delete
 					</button>
 				</div>

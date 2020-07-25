@@ -1,10 +1,50 @@
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 @import './now-ui-kit.scss';
 
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    background-color: steelblue;
+}
+
+.container-signIn {
+
+    width: 400px;
+    height: 730px;
+    background-color: snow;
+    border-radius: 15px;
+}
+
+.ctainer {
+    position: relative;
+    padding-top: 200px;
+}
+
+.container-basic {
+    height: 100%;
+    width: 100%;
+}
+
+.container-info {
+    background: snow;
+    height: 100vh;
+    border-radius: 15px;
 
 
-body h1 {
-    margin: 10px;
+}
+
+.card-list {
+
+    background: snow;
+    border-radius: 5px;
+
 }
 
 .border-transparent {
@@ -21,6 +61,7 @@ body h1 {
 
 .shadow-bold {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5) !important;
+
 }
 
 .btn-clear {
