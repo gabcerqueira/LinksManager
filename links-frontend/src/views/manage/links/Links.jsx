@@ -24,22 +24,12 @@ function Links(props) {
 	const renderLinks = (links) => {
 		if (!links) return null;
 
-		return links.map((link) => {
+		return links.map(({ id, ...linkProps }) => {
 			const border =
-				linkToRemove && linkToRemove.id === link.id
+				linkToRemove && linkToRemove.id === id
 					? "border border-danger rounded"
 					: "border border-transparent m-5";
-			return (
-				<LinkCard
-					key={link.id}
-					id={link.id}
-					img={link.img}
-					label={link.label}
-					url={link.url}
-					link={link}
-					border={border}
-				/>
-			);
+			return <LinkCard key={id} id={id} {...linkProps} border={border} />;
 		});
 	};
 

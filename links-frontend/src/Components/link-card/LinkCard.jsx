@@ -1,27 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { setLinkToRemove } from "../../actions/linkActions";
 
 function LinkCard(props) {
-	const { setLinkToRemove, border } = props;
-	const [linkId, setlinkId] = useState();
-	//const [linkImg, setLinkImg] = useState();
-	const [linkLabel, setLinkLabel] = useState();
-	const [linkUrl, setLinkUrl] = useState();
-	const [link, setLink] = useState(null);
+	const { setLinkToRemove, border, label, id, url } = props;
 
 	const deleteLink = (e) => {
-		setLinkToRemove(link);
+		setLinkToRemove(props);
 	};
-
-	useEffect(() => {
-		if (props.id !== linkId) setlinkId(props.id);
-		//	setLinkImg(props.img);
-		if (props.label !== linkLabel) setLinkLabel(props.label);
-		if (props.url !== linkUrl) setLinkUrl(props.url);
-		if (props.link !== link) setLink(props.link);
-	});
 
 	return (
 		<div
@@ -32,17 +19,14 @@ function LinkCard(props) {
 			</div>
 
 			<div className="align-self-center">
-				<span className="text-primary clearfix">{linkId}</span>
-				<span className="text-primary clearfix">{linkLabel}</span>
-				<span className="text-primary clearfix">{linkUrl}</span>
+				<span className="text-primary clearfix">{id}</span>
+				<span className="text-primary clearfix">{label}</span>
+				<span className="text-primary clearfix">{url}</span>
 			</div>
 
 			<div className="ml-auto p-2 clearfix">
 				<div className="col text-right align-self-bottom ">
-					<Link
-						to={`/manage/links/edit/${linkId}`}
-						className="btn btn-secondary"
-					>
+					<Link to={`/manage/links/edit/${id}`} className="btn btn-secondary">
 						edit
 					</Link>
 				</div>
